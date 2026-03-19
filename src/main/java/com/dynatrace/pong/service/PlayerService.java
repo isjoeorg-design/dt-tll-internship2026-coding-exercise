@@ -59,6 +59,10 @@ public class PlayerService {
         playerRepository.deleteById(id);
     }
 
+    public boolean playerExists(Long playerId) {
+        return playerRepository.existsById(playerId);
+    }
+
     private PlayerResponse toResponse(Player player) {
         return new PlayerResponse(
                 player.getId(),
